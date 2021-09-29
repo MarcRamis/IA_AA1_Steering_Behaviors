@@ -1,0 +1,3 @@
+﻿  Agent.cpp
+C:\Users\marc.ramis.ENTI\Desktop\AA1_SteeringBehaviours_AlcaideAlex_GuerraJoseAdrian_RamisMarc\SDL_Steering_Behaviors_v01\src\Agent.cpp(18,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+  SDL_Steering_Behaviors.vcxproj -> C:\Users\marc.ramis.ENTI\Desktop\AA1_SteeringBehaviours_AlcaideAlex_GuerraJoseAdrian_RamisMarc\SDL_Steering_Behaviors_v01\bin\SDL_Steering_Behaviors.exe
