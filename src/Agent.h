@@ -7,6 +7,7 @@
 #include "Vector2D.h"
 #include "utils.h"
 
+#include <vector>
 
 class Agent
 {
@@ -27,7 +28,15 @@ public:
 			agent->setPosition(agent->getPosition() + agent->getVelocity() * dtime);
 		};
 	};
+
+	class Blending 
+	{
+	public:
+		std::vector<SteeringBehavior> steering_behaviors;
+	};
+
 private:
+	
 	SteeringBehavior *steering_behaviour;
 	Vector2D position;
 	Vector2D velocity;
