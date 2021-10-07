@@ -6,6 +6,7 @@
 #include "SceneSeek.h"
 #include "SceneFlee.h"
 #include "SceneSeekFlee.h"
+#include "SceneBlending.h"
 
 
 using namespace std;
@@ -16,8 +17,8 @@ int main(int argc, char ** argv)
 	SDL_Event event;
 
 	SDL_SimpleApp *app = SDL_SimpleApp::Instance();
-
-	Scene *curr_scene = new SceneSeek;
+	
+	Scene *curr_scene = new SceneBlending;
 	app->setWindowTitle(curr_scene->getTitle());
 
 	while (!quit)
@@ -47,12 +48,12 @@ int main(int argc, char ** argv)
 				curr_scene = new SceneSeekFlee;
 				app->setWindowTitle(curr_scene->getTitle());
 			}
-			//if (event.key.keysym.scancode == SDL_SCANCODE_4)
-			//{
-			//	delete(curr_scene);
-			//	curr_scene = new SceneSeekFlee;	// CAMBIAR A new SceneWeightedBlending
-			//	app->setWindowTitle(curr_scene->getTitle());
-			//}
+			if (event.key.keysym.scancode == SDL_SCANCODE_4)
+			{
+				delete(curr_scene);
+				curr_scene = new SceneBlending;
+				app->setWindowTitle(curr_scene->getTitle());
+			}
 
 			if ((event.key.keysym.scancode == SDL_SCANCODE_Q) || (event.key.keysym.scancode == SDL_SCANCODE_ESCAPE))
 			{

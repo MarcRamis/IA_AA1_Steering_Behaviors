@@ -28,11 +28,14 @@ public:
 			agent->setPosition(agent->getPosition() + agent->getVelocity() * dtime);
 		};
 	};
-
-	class Blending 
+	
+	class Flocking 
 	{
 	public:
-		std::vector<SteeringBehavior> steering_behaviors;
+		std::vector<SteeringBehavior> steering_behaviour;
+		float weight;
+		
+		// Función que sume todos los steering
 	};
 
 private:
