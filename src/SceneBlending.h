@@ -3,6 +3,8 @@
 #include "Scene.h"
 #include "Agent.h"
 #include "Flee.h"
+#include "Separation.h"
+#include "Arrive.h"
 
 class SceneBlending : public Scene
 {

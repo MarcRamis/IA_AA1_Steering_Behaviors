@@ -17,6 +17,7 @@ public:
 	public:
 		SteeringBehavior() {};
 		virtual ~SteeringBehavior() {};
+		//virtual Vector2D calculateSteeringForce(std::vector<Agent> *agents, float dtime) = 0;
 		virtual Vector2D calculateSteeringForce(Agent* agent, float dtime) = 0;
 		void applySteeringForce(Agent *agent, float dtime) {
 			Vector2D steeringForce = this->calculateSteeringForce(agent, dtime);
@@ -50,6 +51,7 @@ private:
 	float orientation;
 	float max_force;
 	float max_velocity;
+	float slowingRadius;
 
 	SDL_Texture *sprite_texture;
 	bool draw_sprite;
@@ -66,6 +68,7 @@ public:
 	float getMaxVelocity();
 	float getMaxForce();
 	float getMass();
+	float getSlowingRadius();
 	void setBehavior(SteeringBehavior *behavior);
 	void setPosition(Vector2D position);
 	void setTarget(Vector2D target);

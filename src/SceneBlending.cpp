@@ -7,7 +7,7 @@ SceneBlending::SceneBlending()
 	for (int i = 0; i < 10; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new Flee);
+		agent->setBehavior(new Arrive);
 		int randSpawnW = rand() % (1280 - 75);
 		int randSpawnH = rand() % (768 - 50);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
