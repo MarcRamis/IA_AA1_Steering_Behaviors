@@ -29,3 +29,8 @@ Vector2D Arrive::calculateSteeringForce(Agent* agent, float dtime)
 	steeringForce.Normalize();
 	return steeringForce * agent->getMaxForce();
 }
+
+Vector2D Arrive::calculateSteeringForce(std::vector<Agent::SteeringBehavior*> steeringBehaviours, std::vector<float> weight, float dtime)
+{
+	return Vector2D();
+}

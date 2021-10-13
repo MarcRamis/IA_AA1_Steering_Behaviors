@@ -18,3 +18,8 @@ Vector2D Seek::calculateSteeringForce(Agent *agent, float dtime)
 	return steeringForce * agent->getMaxForce();
 
 }
+
+Vector2D Seek::calculateSteeringForce(std::vector<Agent::SteeringBehavior*> steeringBehaviours, std::vector<float> weight, float dtime)
+{
+	return Vector2D();
+}

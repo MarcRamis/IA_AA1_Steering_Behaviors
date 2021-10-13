@@ -1,8 +1,3 @@
-﻿  Arrive.cpp
-  main.cpp
-  SceneBlending.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(13,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(13,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SceneFlee.cpp
-  Generating Code...
-  SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
+﻿  WeightedBlending.cpp
+C:\Users\alex\Documents\Universidad\GitKraken\AA1_Steering_Behaviors\src\WeightedBlending.cpp(15,23): warning C4018: '<': signed/unsigned mismatch
+  SDL_Steering_Behaviors.vcxproj -> C:\Users\alex\Documents\Universidad\GitKraken\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
