@@ -17,7 +17,6 @@ public:
 	public:
 		SteeringBehavior() {};
 		virtual ~SteeringBehavior() {};
-		//virtual Vector2D calculateSteeringForce(std::vector<Agent> *agents, float dtime) = 0;
 		virtual Vector2D calculateSteeringForce(Agent* agent, float dtime) = 0;
 		void applySteeringForce(Agent *agent, float dtime) {
 			Vector2D steeringForce = this->calculateSteeringForce(agent, dtime);
