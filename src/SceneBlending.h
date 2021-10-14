@@ -4,7 +4,6 @@
 #include "Agent.h"
 #include "Flee.h"
 #include "Separation.h"
-#include "Arrive.h"
 #include "Seek.h"
 #include "WeightedBlending.h"
 

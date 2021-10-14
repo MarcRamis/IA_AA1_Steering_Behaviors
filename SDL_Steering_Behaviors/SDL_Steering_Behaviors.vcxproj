@@ -131,7 +131,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Agent.cpp" />
-    <ClCompile Include="..\src\Arrive.cpp" />
     <ClCompile Include="..\src\Flee.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\SceneBlending.cpp" />
@@ -146,7 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Agent.h" />
-    <ClInclude Include="..\src\Arrive.h" />
     <ClInclude Include="..\src\Flee.h" />
     <ClInclude Include="..\src\SceneBlending.h" />
     <ClInclude Include="..\src\Separation.h" />

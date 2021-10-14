@@ -48,9 +48,6 @@
     <ClCompile Include="..\src\SceneBlending.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Arrive.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\WeightedBlending.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -90,9 +87,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\SceneBlending.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Arrive.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\WeightedBlending.h">

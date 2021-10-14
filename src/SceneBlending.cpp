@@ -3,14 +3,12 @@
 SceneBlending::SceneBlending()
 {
 	Agent* agent;
-	std::vector<Agent::SteeringBehavior*> steeringBehaviours = { new Flee, new Seek };
-	std::vector<float> weight = { 0.8f, 0.2f };
-	WeightedBlending* wb = new WeightedBlending();
 
 	for (int i = 0; i < 10; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new WeightedBlending({new Flee, new Seek}, {0.8f, 0.2f}));
+		agent->setBehavior(new WeightedBlending({ new Flee, new Seek }, { new float(0.2f), new float(0.8f) }));
+		//agent->setBehavior(new Flee);
 		int randSpawnW = rand() % (1280 - 75);
 		int randSpawnH = rand() % (768 - 50);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
