@@ -131,6 +131,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Agent.cpp" />
+    <ClCompile Include="..\src\Alignment.cpp" />
+    <ClCompile Include="..\src\Cohesion.cpp" />
     <ClCompile Include="..\src\Flee.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\SceneBlending.cpp" />
@@ -145,9 +147,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Agent.h" />
+    <ClInclude Include="..\src\Alignment.h" />
+    <ClInclude Include="..\src\Cohesion.h" />
+    <ClInclude Include="..\src\Constants.h" />
     <ClInclude Include="..\src\Flee.h" />
     <ClInclude Include="..\src\SceneBlending.h" />
     <ClInclude Include="..\src\Separation.h" />
+    <ClInclude Include="..\src\Utility.h" />
     <ClInclude Include="..\src\utils.h" />
     <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\SceneFlee.h" />

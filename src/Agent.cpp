@@ -155,3 +155,14 @@ bool Agent::loadSpriteTexture(char* filename, int _num_frames)
 
 	return true;
 }
+
+void Agent::SearchFloc(Agent* agent, std::vector<Agent*> agents)
+{
+	for (Agent * a : agents)
+	{
+		if ((Vector2D().Distance(agent->getPosition(), a->getPosition()) < K_FLOCK_NEIGHBOUR_RADIUS) && agent->getPosition() != a->getPosition())
+		{
+			agent->floc.push_back(a);
+		}
+	}
+}

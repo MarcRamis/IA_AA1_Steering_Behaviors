@@ -4,11 +4,10 @@ SceneBlending::SceneBlending()
 {
 	Agent* agent;
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new WeightedBlending({ new Flee, new Seek }, { new float(0.2f), new float(0.8f) }));
-		//agent->setBehavior(new Flee);
+		agent->setBehavior(new WeightedBlending({ new Seek }, { new float(1.0f)}));
 		int randSpawnW = rand() % (1280 - 75);
 		int randSpawnH = rand() % (768 - 50);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
@@ -21,6 +20,17 @@ SceneBlending::SceneBlending()
 		a->loadSpriteTexture("../res/soldier.png", 4);
 		target = Vector2D(640, 360);
 	}
+	for (Agent* a : agents)
+	{
+		for (Agent *a2 : agents)
+		{
+			if (a->getPosition() != a2->getPosition())
+			{
+				a->floc.push_back(a2);
+			}
+		}
+	}
+	
 }
 
 SceneBlending::~SceneBlending()

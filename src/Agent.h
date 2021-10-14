@@ -1,4 +1,8 @@
 #pragma once
+
+#include "Constants.h"
+#include "Utility.h"
+
 #include <iostream>
 #include <minmax.h>
 #include <SDL.h>
@@ -29,15 +33,6 @@ public:
 			agent->setPosition(agent->getPosition() + agent->getVelocity() * dtime);
 		};
 	};
-	
-	class Flocking 
-	{
-	public:
-		std::vector<SteeringBehavior> steering_behaviour;
-		float weight;
-		
-		// Función que sume todos los steering
-	};
 
 private:
 	
@@ -45,6 +40,7 @@ private:
 	Vector2D position;
 	Vector2D velocity;
 	Vector2D target;
+	
 
 	float mass;
 	float speed;
@@ -60,6 +56,9 @@ private:
 	int sprite_h;
 
 public:
+
+	std::vector<Agent*> floc;
+
 	Agent();
 	~Agent();
 	Vector2D getPosition();
@@ -76,5 +75,6 @@ public:
 	void update(float dtime, SDL_Event *event);
 	void draw();
 	bool Agent::loadSpriteTexture(char* filename, int num_frames=1);
-	
+
+	void SearchFloc(Agent *agent, std::vector<Agent*> agents);
 };
