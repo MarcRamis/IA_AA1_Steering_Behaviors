@@ -36,3 +36,9 @@ Vector2D WeightedBlending::calculateSteeringForce(std::vector<Agent::SteeringBeh
 {
     return Vector2D();
 }
+
+void WeightedBlending::Append(Agent::SteeringBehavior* _sb)
+{
+    m_SB.push_back(_sb);
+    m_Weight.push_back(new float(0.5f));
+}
