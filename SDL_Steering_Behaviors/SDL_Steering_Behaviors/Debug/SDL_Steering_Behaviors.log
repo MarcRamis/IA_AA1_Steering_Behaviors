@@ -1,8 +1,20 @@
-﻿  Alignment.cpp
+﻿  Agent.cpp
+C:\Users\alex.alcaide\Documents\Alex\Universidad\AA1_Steering_Behaviors\src\Agent.cpp(19,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Alignment.cpp
   Cohesion.cpp
+  Flee.cpp
+  main.cpp
   SceneBlending.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(13,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(13,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\alex.alcaide\Documents\Alex\Universidad\AA1_Steering_Behaviors\src\SceneBlending.cpp(13,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\alex.alcaide\Documents\Alex\Universidad\AA1_Steering_Behaviors\src\SceneBlending.cpp(13,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SceneFlee.cpp
+  SceneSeekFlee.cpp
+  SceneSeek.cpp
+  SDL_SimpleApp.cpp
+  Seek.cpp
   Separation.cpp
+  utils .cpp
+  WeightedBlending.cpp
+C:\Users\alex.alcaide\Documents\Alex\Universidad\AA1_Steering_Behaviors\src\WeightedBlending.cpp(27,23): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
+  SDL_Steering_Behaviors.vcxproj -> C:\Users\alex.alcaide\Documents\Alex\Universidad\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

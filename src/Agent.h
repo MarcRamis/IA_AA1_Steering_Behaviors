@@ -40,7 +40,7 @@ private:
 	Vector2D position;
 	Vector2D velocity;
 	Vector2D target;
-	
+	//std::vector<Agent*> flock;
 
 	float mass;
 	float speed;
