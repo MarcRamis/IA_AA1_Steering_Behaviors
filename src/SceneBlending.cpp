@@ -8,8 +8,8 @@ SceneBlending::SceneBlending()
 	{
 		agent = new Agent;
 		agent->setBehavior(new WeightedBlending({ new Seek }, { new float(1.0f)}));
-		int randSpawnW = rand() % (1280 - 75);
-		int randSpawnH = rand() % (768 - 50);
+		int randSpawnW = rand() % (1280);
+		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
 		agents.push_back(agent);
 	}

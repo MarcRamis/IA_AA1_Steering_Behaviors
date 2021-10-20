@@ -97,9 +97,13 @@ void Agent::update(float dtime, SDL_Event *event)
 		break;
 	}
 
+	// SEARCH NEIGHBOUR FLOCK
+
 	// Apply the steering behavior
 	steering_behaviour->applySteeringForce(this, dtime);
 	
+	// CLEAN NEGIHBOUR FLOCK
+
 	// Update orientation
 	if (velocity.Length())
 		orientation = (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
