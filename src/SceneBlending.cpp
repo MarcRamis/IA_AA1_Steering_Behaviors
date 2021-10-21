@@ -6,7 +6,7 @@ SceneBlending::SceneBlending()
 
 	Agent* agent;
 
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < K_MAX_AGENTS; i++)
 	{
 		agent = new Agent;
 		agent->setBehavior(new WeightedBlending(
@@ -15,15 +15,13 @@ SceneBlending::SceneBlending()
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
+
+		agent->setTarget(Vector2D(640, 360));
+		agent->loadSpriteTexture("../res/soldier.png", 4);
 		agents.push_back(agent);
 	}
 
-	for (Agent * a : agents)
-	{
-		a->setTarget(Vector2D(640,360));
-		a->loadSpriteTexture("../res/soldier.png", 4);
-		target = Vector2D(640, 360);
-	}
+	target = Vector2D(640, 360);
 
 	for (Agent* a : agents)
 	{
@@ -32,7 +30,6 @@ SceneBlending::SceneBlending()
 			a->setFlock(a2);
 		}
 	}
-	
 }
 
 SceneBlending::~SceneBlending()
