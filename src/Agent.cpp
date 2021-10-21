@@ -155,3 +155,8 @@ bool Agent::loadSpriteTexture(char* filename, int _num_frames)
 
 	return true;
 }
+
+Vector2D Agent::SteeringBehavior::GetSteeringForce(Agent* agent, float dtime)
+{
+	return this->calculateSteeringForce(agent, dtime);
+}

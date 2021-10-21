@@ -1,14 +1,18 @@
 #pragma once
 #include "Agent.h"
-#include <forward_list>
+#include <vector>
+
 
 class PriorityList :
 	public Agent::SteeringBehavior
 {
-	std::forward_list<Agent::SteeringBehavior*> priorityList;
+	std::vector< Agent::SteeringBehavior*> mySteeringsBehaviors;
+	std::vector<float*> steeringPriority_K;
+	
 
 public:
-
-	std::forward_list<Agent::SteeringBehavior*> MyPriorityList(std::vector<SteeringBehavior*> _steeringBehaviors);
+	PriorityList();
+	PriorityList(std::vector<Agent::SteeringBehavior*> _sb, std::vector<float*> _steeringPriority_K);
+	~PriorityList();
+	Vector2D calculateSteeringForce(Agent* agent, float dtime);
 };
-
