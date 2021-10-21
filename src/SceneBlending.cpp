@@ -2,12 +2,16 @@
 
 SceneBlending::SceneBlending()
 {
+	srand(time(NULL)); // random seed
+
 	Agent* agent;
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new WeightedBlending({ new Alignment, new Separation}, { new float(10), new float(0.2f)}));
+		agent->setBehavior(new WeightedBlending(
+			{ new Seek, new Separation, new Cohesion, new Alignment}, 
+			{ new float(0.05), new float(0.65f), new float(0.10f), new float(0.20f)}));
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
@@ -41,8 +45,6 @@ SceneBlending::~SceneBlending()
 
 void SceneBlending::update(float dtime, SDL_Event* event)
 {
-	srand(time(nullptr));
-
 	/* Keyboard & Mouse events */
 	switch (event->type) {
 	case SDL_MOUSEMOTION:

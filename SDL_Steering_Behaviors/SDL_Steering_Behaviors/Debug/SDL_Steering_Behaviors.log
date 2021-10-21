@@ -1,9 +1,6 @@
-﻿  Alignment.cpp
-C:\Users\alex\Documents\Universidad\GitKraken\AA1_Steering_Behaviors\src\Alignment.cpp(20,54): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-  SceneBlending.cpp
-C:\Users\alex\Documents\Universidad\GitKraken\AA1_Steering_Behaviors\src\SceneBlending.cpp(13,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\alex\Documents\Universidad\GitKraken\AA1_Steering_Behaviors\src\SceneBlending.cpp(13,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\alex\Documents\Universidad\GitKraken\AA1_Steering_Behaviors\src\SceneBlending.cpp(44,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  main.cpp
-  Generating Code...
-  SDL_Steering_Behaviors.vcxproj -> C:\Users\alex\Documents\Universidad\GitKraken\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
+﻿  SceneBlending.cpp
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(14,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(17,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(17,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
