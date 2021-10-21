@@ -1,1 +1,4 @@
-﻿  SDL_Steering_Behaviors.vcxproj -> C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
+﻿  Agent.cpp
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(19,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(148,84): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+  SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

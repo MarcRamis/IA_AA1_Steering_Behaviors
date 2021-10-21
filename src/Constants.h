@@ -1,3 +1,3 @@
 #pragma once
 
-const float K_FLOCK_NEIGHBOUR_RADIUS = 3.f;
+const float K_NEIGHBOUR_FLOCK_RADIUS = 75.f;

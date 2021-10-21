@@ -58,8 +58,6 @@ private:
 
 public:
 
-	std::vector<Agent*> floc;
-
 	Agent();
 	~Agent();
 	Vector2D getPosition();
@@ -69,6 +67,7 @@ public:
 	float getMaxForce();
 	float getMass();
 	float getSlowingRadius();
+	void setFlock(Agent *agent);
 	void setBehavior(SteeringBehavior *behavior);
 	void setPosition(Vector2D position);
 	void setTarget(Vector2D target);
@@ -77,5 +76,7 @@ public:
 	void draw();
 	bool Agent::loadSpriteTexture(char* filename, int num_frames=1);
 
-	void SearchFloc(Agent *agent, std::vector<Agent*> agents);
+private:
+	void setNeighbourFlock(const float neghbour_radius);
+	void cleanNeighbourFlock();
 };

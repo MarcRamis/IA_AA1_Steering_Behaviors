@@ -4,7 +4,7 @@ SceneBlending::SceneBlending()
 {
 	Agent* agent;
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		agent = new Agent;
 		agent->setBehavior(new WeightedBlending({ new Seek }, { new float(1.0f)}));
@@ -20,14 +20,12 @@ SceneBlending::SceneBlending()
 		a->loadSpriteTexture("../res/soldier.png", 4);
 		target = Vector2D(640, 360);
 	}
+
 	for (Agent* a : agents)
 	{
 		for (Agent *a2 : agents)
 		{
-			if (a->getPosition() != a2->getPosition())
-			{
-				a->floc.push_back(a2);
-			}
+			a->setFlock(a2);
 		}
 	}
 	
