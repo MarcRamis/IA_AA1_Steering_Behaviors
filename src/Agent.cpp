@@ -67,6 +67,19 @@ float Agent::getSlowingRadius()
 	return slowingRadius;
 }
 
+std::vector<Agent*> Agent::getNeighbour_flock()
+{
+	return neighbour_Flock;
+}
+
+void Agent::setFlock(Agent *agent)
+{
+	if (position != agent->position)
+	{
+		flock.push_back(agent);
+	}
+}
+
 void Agent::setPosition(Vector2D _position)
 {
 	position = _position;
@@ -97,8 +110,14 @@ void Agent::update(float dtime, SDL_Event *event)
 		break;
 	}
 
+	// Search neighbour flock
+	setNeighbourFlock(K_NEIGHBOUR_FLOCK_RADIUS);
+	
 	// Apply the steering behavior
 	steering_behaviour->applySteeringForce(this, dtime);
+	
+	// Clean neighbour flock
+	cleanNeighbourFlock();
 	
 	// Update orientation
 	if (velocity.Length())
@@ -131,6 +150,7 @@ void Agent::draw()
 	{
 		draw_circle(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, 15, 255, 255, 255, 255);
 		SDL_RenderDrawLine(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, (int)(position.x+15*cos(orientation*DEG2RAD)), (int)(position.y+15*sin(orientation*DEG2RAD)));
+		draw_circle(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, K_NEIGHBOUR_FLOCK_RADIUS, 0, 0, 255, 255);
 	}
 }
 
@@ -154,4 +174,18 @@ bool Agent::loadSpriteTexture(char* filename, int _num_frames)
 		SDL_FreeSurface(image);
 
 	return true;
+}
+void Agent::setNeighbourFlock(const float neghbour_radius)
+{
+	for (Agent *agent_in_flock : flock) {
+
+		float distance = Vector2D::Distance(position, agent_in_flock->position); // Calc distance
+		if (distance < neghbour_radius) {
+			neighbour_Flock.push_back(agent_in_flock);
+		}
+	}
+}
+void Agent::cleanNeighbourFlock()
+{
+	neighbour_Flock.clear();
 }

@@ -3,9 +3,6 @@
 #include <SDL_image.h>
 
 #include "SDL_SimpleApp.h"
-#include "SceneSeek.h"
-#include "SceneFlee.h"
-#include "SceneSeekFlee.h"
 #include "SceneBlending.h"
 
 
@@ -31,24 +28,6 @@ int main(int argc, char ** argv)
 		{
 		case SDL_KEYDOWN:
 			if (event.key.keysym.scancode == SDL_SCANCODE_1)
-			{
-				delete(curr_scene);
-				curr_scene = new SceneSeek;
-				app->setWindowTitle(curr_scene->getTitle());
-			}
-			if (event.key.keysym.scancode == SDL_SCANCODE_2)
-			{
-				delete(curr_scene);
-				curr_scene = new SceneFlee;
-				app->setWindowTitle(curr_scene->getTitle());
-			}
-			if (event.key.keysym.scancode == SDL_SCANCODE_3)
-			{
-				delete(curr_scene);
-				curr_scene = new SceneSeekFlee;
-				app->setWindowTitle(curr_scene->getTitle());
-			}
-			if (event.key.keysym.scancode == SDL_SCANCODE_4)
 			{
 				delete(curr_scene);
 				curr_scene = new SceneBlending;
