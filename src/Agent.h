@@ -22,7 +22,6 @@ public:
 		SteeringBehavior() {};
 		virtual ~SteeringBehavior() {};
 		virtual Vector2D calculateSteeringForce(Agent* agent, float dtime) = 0;
-		virtual Vector2D calculateSteeringForce(std::vector<Agent::SteeringBehavior*> steeringBehaviours, std::vector<float> weight, float dtime) = 0;
 		void applySteeringForce(Agent *agent, float dtime) {
 			Vector2D steeringForce = this->calculateSteeringForce(agent, dtime);
 			Vector2D acceleration = steeringForce / agent->getMass();
@@ -67,6 +66,7 @@ public:
 	float getMaxForce();
 	float getMass();
 	float getSlowingRadius();
+	std::vector<Agent*> getNeighbour_flock();
 	void setFlock(Agent *agent);
 	void setBehavior(SteeringBehavior *behavior);
 	void setPosition(Vector2D position);

@@ -67,6 +67,11 @@ float Agent::getSlowingRadius()
 	return slowingRadius;
 }
 
+std::vector<Agent*> Agent::getNeighbour_flock()
+{
+	return neighbour_Flock;
+}
+
 void Agent::setFlock(Agent *agent)
 {
 	if (position != agent->position)
@@ -111,7 +116,7 @@ void Agent::update(float dtime, SDL_Event *event)
 	// Apply the steering behavior
 	steering_behaviour->applySteeringForce(this, dtime);
 	
-	// CLEAN NEGIHBOUR FLOCK
+	// Clean neighbour flock
 	cleanNeighbourFlock();
 	
 	// Update orientation
