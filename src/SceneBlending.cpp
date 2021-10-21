@@ -7,7 +7,7 @@ SceneBlending::SceneBlending()
 	for (int i = 0; i < 50; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new WeightedBlending({ new Seek, new Separation}, { new float(0.1f), new float(20.f)}));
+		agent->setBehavior(new WeightedBlending({ new Alignment, new Separation}, { new float(10), new float(0.2f)}));
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
