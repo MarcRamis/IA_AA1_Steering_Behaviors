@@ -78,5 +78,5 @@ void SceneBlending::draw()
 
 const char* SceneBlending::getTitle()
 {
-	return "SDL Steering Behaviors :: Blending";
+	return "SDL Steering Behaviors :: Flocking system wth Weighted Blending";
 }

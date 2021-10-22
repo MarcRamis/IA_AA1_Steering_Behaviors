@@ -93,3 +93,20 @@ void draw_circle(SDL_Renderer *surface, int n_cx, int n_cy, int rad, Uint8 r, Ui
 		}
 	}
 }
+
+void draw_cube(SDL_Renderer *surface, int n_cx, int n_cy, int weight, int height, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+{
+	SDL_Rect rect;
+	rect.x = n_cx;
+	rect.y = n_cy;
+	rect.w = weight;
+	rect.h = height;
+
+	SDL_SetRenderDrawColor(surface, r, g, b, a);
+	SDL_RenderDrawRect(surface, &rect);
+	SDL_RenderFillRect(surface, &rect);
+
+	SDL_SetRenderDrawColor(surface, 0, 0, 0, 255);
+
+	SDL_RenderPresent(surface);
+}
