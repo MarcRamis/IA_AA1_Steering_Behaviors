@@ -110,3 +110,16 @@ void draw_cube(SDL_Renderer *surface, int n_cx, int n_cy, int weight, int height
 
 	SDL_RenderPresent(surface);
 }
+
+void draw_triangle(SDL_Renderer* surface, int leftX, int leftY, int rightX, int rightY, int topX, int topY, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+{
+	SDL_SetRenderDrawColor(surface, r, g, b, a);
+
+	//Drawing the lines we want. (-1, 0), (0, 1), (1, 0)
+	SDL_RenderDrawLine(surface, leftX, leftY, topX, topY);
+	SDL_RenderDrawLine(surface, rightX, rightY, topX, topY);
+	SDL_RenderDrawLine(surface, leftX, leftY, rightX, rightY);
+
+	//Update the Renderer.
+	SDL_RenderPresent(surface);
+}

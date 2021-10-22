@@ -141,6 +141,7 @@
     <ClCompile Include="..\src\SDL_SimpleApp.cpp" />
     <ClCompile Include="..\src\Seek.cpp" />
     <ClCompile Include="..\src\Separation.cpp" />
+    <ClCompile Include="..\src\Triangle.cpp" />
     <ClCompile Include="..\src\utils.cpp" />
     <ClCompile Include="..\src\Wall.cpp" />
     <ClCompile Include="..\src\WeightedBlending.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="..\src\SceneBlending.h" />
     <ClInclude Include="..\src\SceneObstacleAvoidance.h" />
     <ClInclude Include="..\src\Separation.h" />
+    <ClInclude Include="..\src\Triangle.h" />
     <ClInclude Include="..\src\Utility.h" />
     <ClInclude Include="..\src\utils.h" />
     <ClInclude Include="..\src\Scene.h" />
