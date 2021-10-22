@@ -1,12 +1,11 @@
 #pragma once
 #include "Agent.h"
 
-class Separation : 
+class CollissionAvoidance :
 	public Agent::SteeringBehavior
 {
 public:
-	
-	Separation();
-	~Separation();
+	CollissionAvoidance();
+	~CollissionAvoidance();
 	Vector2D calculateSteeringForce(Agent* agent, float dtime);
 };

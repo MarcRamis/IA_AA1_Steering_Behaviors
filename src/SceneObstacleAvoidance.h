@@ -3,6 +3,8 @@
 #include "Scene.h"
 #include "Agent.h"
 #include "Wall.h"
+#include "WeightedBlending.h"
+#include "Seek.h"
 
 class SceneObstacleAvoidance :
     public Scene
