@@ -1,6 +1,11 @@
-﻿  main.cpp
-  SceneBlending.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(14,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(14,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  Agent.cpp
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(19,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(153,84): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+  Alignment.cpp
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Alignment.cpp(20,54): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Cohesion.cpp
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Cohesion.cpp(20,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Flee.cpp
+  main.cpp
   Generating Code...
   SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

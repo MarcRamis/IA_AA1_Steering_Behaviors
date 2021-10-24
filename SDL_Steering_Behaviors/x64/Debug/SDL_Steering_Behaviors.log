@@ -1,19 +1,30 @@
 ﻿  Agent.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.h(8,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Alignment.cpp
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.h(8,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Cohesion.cpp
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.h(8,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   Flee.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.h(8,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   main.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\main.cpp(2,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\main.cpp(2,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  PriorityWeigh.cpp
+  SceneBlending.cpp
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Scene.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   SceneFlee.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Scene.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Scene.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   SceneSeekFlee.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Scene.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Scene.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   SceneSeek.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Scene.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Scene.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   SDL_SimpleApp.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SDL_SimpleApp.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\SDL_SimpleApp.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   Seek.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.h(8,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Separation.cpp
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.h(8,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   utils .cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\utils .cpp(5,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\utils .cpp(5,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  WeightedBlending.cpp
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.h(8,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   Generating Code...

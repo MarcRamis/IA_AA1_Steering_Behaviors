@@ -1,4 +1,8 @@
 #pragma once
+
+#include "Constants.h"
+#include "Utility.h"
+
 #include <iostream>
 #include <minmax.h>
 #include <SDL.h>
@@ -18,7 +22,6 @@ public:
 		SteeringBehavior() {};
 		virtual ~SteeringBehavior() {};
 		virtual Vector2D calculateSteeringForce(Agent* agent, float dtime) = 0;
-		virtual Vector2D calculateSteeringForce(std::vector<Agent::SteeringBehavior*> steeringBehaviours, std::vector<float> weight, float dtime) = 0;
 		Vector2D GetSteeringForce(Agent* agent, float dtime);
 		void applySteeringForce(Agent *agent, float dtime) {
 			Vector2D steeringForce = this->calculateSteeringForce(agent, dtime);
@@ -30,15 +33,6 @@ public:
 			agent->setPosition(agent->getPosition() + agent->getVelocity() * dtime);
 		};
 	};
-	
-	class Flocking 
-	{
-	public:
-		std::vector<SteeringBehavior> steering_behaviour;
-		float weight;
-		
-		// Función que sume todos los steering
-	};
 
 private:
 	
@@ -46,6 +40,8 @@ private:
 	Vector2D position;
 	Vector2D velocity;
 	Vector2D target;
+	std::vector<Agent*> flock;
+	std::vector<Agent*> neighbour_Flock;
 
 	float mass;
 	float speed;
@@ -61,6 +57,7 @@ private:
 	int sprite_h;
 
 public:
+
 	Agent();
 	~Agent();
 	Vector2D getPosition();
@@ -70,6 +67,8 @@ public:
 	float getMaxForce();
 	float getMass();
 	float getSlowingRadius();
+	std::vector<Agent*> getNeighbour_flock();
+	void setFlock(Agent *agent);
 	void setBehavior(SteeringBehavior *behavior);
 	void setPosition(Vector2D position);
 	void setTarget(Vector2D target);
@@ -77,5 +76,8 @@ public:
 	void update(float dtime, SDL_Event *event);
 	void draw();
 	bool Agent::loadSpriteTexture(char* filename, int num_frames=1);
-	
+
+private:
+	void setNeighbourFlock(const float neghbour_radius);
+	void cleanNeighbourFlock();
 };
