@@ -54,10 +54,10 @@
     <ClCompile Include="..\src\SceneObstacleAvoidance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\CollissionAvoidance.cpp">
+    <ClCompile Include="..\src\Triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Triangle.cpp">
+    <ClCompile Include="..\src\ObstacleAvoidance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,10 +110,10 @@
     <ClInclude Include="..\src\SceneObstacleAvoidance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\CollissionAvoidance.h">
+    <ClInclude Include="..\src\Triangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Triangle.h">
+    <ClInclude Include="..\src\ObstacleAvoidance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

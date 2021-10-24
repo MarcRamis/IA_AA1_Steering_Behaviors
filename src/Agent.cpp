@@ -14,8 +14,7 @@ Agent::Agent() : sprite_texture(0),
 				 sprite_num_frames(0),
 	             sprite_w(0),
 	             sprite_h(0),
-	             draw_sprite(false), 
-				 slowingRadius(5.f)
+	             draw_sprite(false)
 {
 }
 
@@ -60,11 +59,6 @@ float Agent::getMaxForce()
 float Agent::getMass()
 {
 	return mass;
-}
-
-float Agent::getSlowingRadius()
-{
-	return slowingRadius;
 }
 
 std::vector<Agent*> Agent::getNeighbour_flock()

@@ -4,6 +4,7 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 {
 	srand(time(NULL)); // random seed
 
+	// Agents init
 	Agent* agent;
 
 	for (int i = 0; i < K_MAX_AGENTS; i++)
@@ -31,6 +32,8 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 		}
 	}
 
+
+	// Walls init
 	Wall* wall = new Wall();
 	wall->setPosition(Vector2D(
 		SDL_SimpleApp::Instance()->getWinSize().x / 2, 
@@ -38,12 +41,13 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 
 	walls.push_back(wall);
 
-	Triangle* triangle = new Triangle();
-	triangle->setLeft(Vector2D(0, 480));
-	triangle->setRight(Vector2D(640, 480));
-	triangle->setTop(Vector2D(320, 0));
-
-	triangles.push_back(triangle);
+	// Triangles init?
+	//riangle* triangle = new Triangle();
+	//riangle->setLeft(Vector2D(0, 480));
+	//riangle->setRight(Vector2D(640, 480));
+	//riangle->setTop(Vector2D(320, 0));
+	//
+	//riangles.push_back(triangle);
 }
 
 SceneObstacleAvoidance::~SceneObstacleAvoidance()
@@ -94,10 +98,10 @@ void SceneObstacleAvoidance::draw()
 		w->draw();
 	}
 
-	for (Triangle* t : triangles)
-	{
-		t->draw();
-	}
+	//for (Triangle* t : triangles)
+	//{
+	//	t->draw();
+	//}
 }
 
 const char* SceneObstacleAvoidance::getTitle()

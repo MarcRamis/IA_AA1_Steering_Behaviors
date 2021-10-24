@@ -47,7 +47,6 @@ private:
 	float orientation;
 	float max_force;
 	float max_velocity;
-	float slowingRadius;
 
 	SDL_Texture *sprite_texture;
 	bool draw_sprite;
@@ -65,7 +64,6 @@ public:
 	float getMaxVelocity();
 	float getMaxForce();
 	float getMass();
-	float getSlowingRadius();
 	std::vector<Agent*> getNeighbour_flock();
 	void setFlock(Agent *agent);
 	void setBehavior(SteeringBehavior *behavior);
