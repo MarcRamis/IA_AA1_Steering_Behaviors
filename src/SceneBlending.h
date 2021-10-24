@@ -8,6 +8,7 @@
 #include "Alignment.h"
 #include "Seek.h"
 #include "WeightedBlending.h"
+#include "PriorityList.h"
 
 class SceneBlending : public Scene
 {

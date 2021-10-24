@@ -9,9 +9,12 @@ SceneBlending::SceneBlending()
 	for (int i = 0; i < K_MAX_AGENTS; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new WeightedBlending(
-			{ new Seek, new Separation, new Cohesion, new Alignment}, 
-			{ new float(0.05), new float(0.65f), new float(0.10f), new float(0.20f)}));
+		agent->setBehavior(new PriorityList({ 
+			new WeightedBlending(
+				{ new Seek, new Flee, new Separation, new Cohesion, new Alignment}, 
+				{ new float(0.05), new float(0.05), new float(0.60f), new float(0.10f), new float(0.20f)})
+			}));
+
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
