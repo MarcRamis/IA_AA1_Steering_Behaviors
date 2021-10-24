@@ -135,6 +135,7 @@
     <ClCompile Include="..\src\Cohesion.cpp" />
     <ClCompile Include="..\src\Flee.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\PriorityList.cpp" />
     <ClCompile Include="..\src\SceneBlending.cpp" />
     <ClCompile Include="..\src\SDL_SimpleApp.cpp" />
     <ClCompile Include="..\src\Seek.cpp" />
@@ -148,6 +149,7 @@
     <ClInclude Include="..\src\Cohesion.h" />
     <ClInclude Include="..\src\Constants.h" />
     <ClInclude Include="..\src\Flee.h" />
+    <ClInclude Include="..\src\PriorityList.h" />
     <ClInclude Include="..\src\SceneBlending.h" />
     <ClInclude Include="..\src\Separation.h" />
     <ClInclude Include="..\src\Utility.h" />

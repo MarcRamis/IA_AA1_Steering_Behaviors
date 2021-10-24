@@ -189,3 +189,7 @@ void Agent::cleanNeighbourFlock()
 {
 	neighbour_Flock.clear();
 }
+Vector2D Agent::SteeringBehavior::GetSteeringForce(Agent* agent, float dtime)
+{
+	return this->calculateSteeringForce(agent, dtime);
+}
