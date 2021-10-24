@@ -1,8 +1,4 @@
-﻿  ObstacleAvoidance.cpp
-  SceneObstacleAvoidance.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(18,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(18,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\ObstacleAvoidance.cpp(30): warning C4715: 'ObstacleAvoidance::calculateSteeringForce': not all control paths return a value
+﻿  Agent.cpp
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(18,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(159,84): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
   SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

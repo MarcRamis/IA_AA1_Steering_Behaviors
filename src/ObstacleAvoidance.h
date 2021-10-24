@@ -10,7 +10,6 @@ class ObstacleAvoidance :
 	public Agent::SteeringBehavior
 {
 private:
-	std::vector<Wall*> walls;
 
 public:
 	ObstacleAvoidance();

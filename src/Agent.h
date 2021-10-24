@@ -2,6 +2,7 @@
 
 #include "Constants.h"
 #include "Utility.h"
+#include "Wall.h"
 
 #include <iostream>
 #include <minmax.h>
@@ -12,6 +13,8 @@
 #include "utils.h"
 
 #include <vector>
+
+using namespace Vector2DUtils;
 
 class Agent
 {
@@ -42,6 +45,9 @@ private:
 	std::vector<Agent*> flock;
 	std::vector<Agent*> neighbour_Flock;
 
+	std::vector<Wall*> walls;
+	std::vector<Wall*> neighbour_walls;
+
 	float mass;
 	float speed;
 	float orientation;
@@ -65,7 +71,9 @@ public:
 	float getMaxForce();
 	float getMass();
 	std::vector<Agent*> getNeighbour_flock();
-	void setFlock(Agent *agent);
+	std::vector<Wall*> getNeighbour_walls();
+	void setFlock(Agent* agent);
+	void setWalls(Wall *wall);
 	void setBehavior(SteeringBehavior *behavior);
 	void setPosition(Vector2D position);
 	void setTarget(Vector2D target);
@@ -76,5 +84,7 @@ public:
 
 private:
 	void setNeighbourFlock(const float neghbour_radius);
+	void setNeighbourWall(const float cone_radius, const float cone_length);
 	void cleanNeighbourFlock();
+	void cleanNeighbourWalls();
 };

@@ -4,8 +4,14 @@
 #include "Agent.h"
 #include "Wall.h"
 #include "Triangle.h"
+
 #include "WeightedBlending.h"
 #include "Seek.h"
+#include "Flee.h"
+#include "Separation.h"
+#include "Cohesion.h"
+#include "Alignment.h"
+#include "ObstacleAvoidance.h"
 
 class SceneObstacleAvoidance :
     public Scene

@@ -66,12 +66,22 @@ std::vector<Agent*> Agent::getNeighbour_flock()
 	return neighbour_Flock;
 }
 
+std::vector<Wall*> Agent::getNeighbour_walls()
+{
+	return neighbour_walls;
+}
+
 void Agent::setFlock(Agent *agent)
 {
 	if (position != agent->position)
 	{
 		flock.push_back(agent);
 	}
+}
+
+void Agent::setWalls(Wall* wall)
+{
+	walls.push_back(wall);
 }
 
 void Agent::setPosition(Vector2D _position)
@@ -106,12 +116,14 @@ void Agent::update(float dtime, SDL_Event *event)
 
 	// Search neighbour flock
 	setNeighbourFlock(K_NEIGHBOUR_FLOCK_RADIUS);
+	setNeighbourWall(K_CONE_HALFANGLE_AGENTS,K_CONE_LENGTH_AGENTS);
 	
 	// Apply the steering behavior
 	steering_behaviour->applySteeringForce(this, dtime);
 	
-	// Clean neighbour flock
+	// Clean neighbour entities
 	cleanNeighbourFlock();
+	cleanNeighbourWalls();
 	
 	// Update orientation
 	if (velocity.Length())
@@ -179,7 +191,34 @@ void Agent::setNeighbourFlock(const float neghbour_radius)
 		}
 	}
 }
+void Agent::setNeighbourWall(const float cone_radius, const float cone_length)
+{
+	//for (Wall *w : walls)
+	//{
+	//	if (IsInsideCone(Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y + w->getHeight()), position,velocity.Normalize() * cone_length, cone_radius))
+	//	{
+	//		neighbour_walls.push_back(w);
+	//	}
+	//	if (IsInsideCone(Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y + w->getHeight()), position, velocity.Normalize() * cone_length, cone_radius))
+	//	{
+	//		neighbour_walls.push_back(w);
+	//	}
+	//	if (IsInsideCone(Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y - w->getHeight()), position, velocity.Normalize() * cone_length, cone_radius))
+	//	{
+	//		neighbour_walls.push_back(w);
+	//	}
+	//	if (IsInsideCone(Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y - w->getHeight()), position, velocity.Normalize() * cone_length, cone_radius))
+	//	{
+	//		neighbour_walls.push_back(w);
+	//	}
+	//}
+}
 void Agent::cleanNeighbourFlock()
 {
 	neighbour_Flock.clear();
+}
+
+void Agent::cleanNeighbourWalls()
+{
+	neighbour_walls.clear();
 }

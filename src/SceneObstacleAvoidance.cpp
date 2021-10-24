@@ -11,8 +11,8 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 	{
 		agent = new Agent;
 		agent->setBehavior(new WeightedBlending(
-			{ new Seek }, 
-			{ new float(1) }));
+			{ new Seek, new Separation, new Cohesion, new Alignment},
+			{ new float(0.05), new float(0.65f), new float(0.10f), new float(0.20f)}));
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
@@ -24,22 +24,26 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 
 	target = Vector2D(640, 360);
 
+	// Walls init
+	Wall* wall = new Wall();
+	wall->setPosition(Vector2D(640, 360));
+
+	walls.push_back(wall);
+
+
+	// GET FLOCK & WALLS ON EVERY AGENT
 	for (Agent* a : agents)
 	{
 		for (Agent *a2 : agents)
 		{
 			a->setFlock(a2);
 		}
+
+		for (Wall* w : walls)
+		{
+			a->setWalls(w);
+		}
 	}
-
-
-	// Walls init
-	Wall* wall = new Wall();
-	wall->setPosition(Vector2D(
-		SDL_SimpleApp::Instance()->getWinSize().x / 2, 
-		SDL_SimpleApp::Instance()->getWinSize().y / 2));
-
-	walls.push_back(wall);
 
 	// Triangles init?
 	//riangle* triangle = new Triangle();
