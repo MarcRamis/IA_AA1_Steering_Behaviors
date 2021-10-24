@@ -5,32 +5,24 @@ PriorityList::PriorityList()
 
 }
 
-PriorityList::PriorityList(std::vector<Agent::SteeringBehavior*> _sb, std::vector<float*> _steeringPriority_K) : mySteeringsBehaviors(_sb), steeringPriority_K(_steeringPriority_K)
+PriorityList::PriorityList(std::list<Agent::SteeringBehavior*> _sb) : mySteeringsBehaviors(_sb)
 {
 
 }
 
 PriorityList::~PriorityList()
 {
-    for (int i = 0; i < (int)mySteeringsBehaviors.size(); i++)
-    {
-        delete mySteeringsBehaviors[i];
-        delete steeringPriority_K[i];
-    }
+    mySteeringsBehaviors.clear();
 }
 
 Vector2D PriorityList::calculateSteeringForce(Agent* agent, float dtime)
 {
-
-    for (int i = 0; i < mySteeringsBehaviors.size() - 1; i++)
+    for (Agent::SteeringBehavior* sb : mySteeringsBehaviors)
     {
-        if (mySteeringsBehaviors[i]->GetSteeringForce(agent, dtime).Length() > *steeringPriority_K[i])
+        float steeringForce = sb->GetSteeringForce(agent, dtime).Length();
+        if (steeringForce > K_MAX_STEERING_FORCE)
         {
-            return mySteeringsBehaviors[i]->GetSteeringForce(agent, dtime);
+            return sb->GetSteeringForce(agent, dtime);
         }
     }
-
-
-
-	return mySteeringsBehaviors[mySteeringsBehaviors.size() - 1]->GetSteeringForce(agent, dtime);
 }
