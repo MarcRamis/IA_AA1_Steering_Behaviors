@@ -1,6 +1,5 @@
 #pragma once
 #include "Agent.h"
-#include "Flee.h"
 
 class Separation : 
 	public Agent::SteeringBehavior

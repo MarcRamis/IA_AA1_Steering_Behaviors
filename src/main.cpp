@@ -4,6 +4,7 @@
 
 #include "SDL_SimpleApp.h"
 #include "SceneBlending.h"
+#include "SceneObstacleAvoidance.h"
 
 
 using namespace std;
@@ -31,6 +32,12 @@ int main(int argc, char ** argv)
 			{
 				delete(curr_scene);
 				curr_scene = new SceneBlending;
+				app->setWindowTitle(curr_scene->getTitle());
+			}
+			if (event.key.keysym.scancode == SDL_SCANCODE_2)
+			{
+				delete(curr_scene);
+				curr_scene = new SceneObstacleAvoidance;
 				app->setWindowTitle(curr_scene->getTitle());
 			}
 

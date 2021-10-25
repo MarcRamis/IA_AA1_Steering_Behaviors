@@ -1,3 +1,10 @@
+<<<<<<< HEAD
 ﻿  PriorityList.cpp
 D:\Uni Projects\IA\AA1_Steering_Behaviors\src\PriorityList.cpp(28): warning C4715: 'PriorityList::calculateSteeringForce': not all control paths return a value
+=======
+﻿  SceneObstacleAvoidance.cpp
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(29,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(29,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+>>>>>>> ObstacleAvoidance
   SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

@@ -1,20 +1,29 @@
-#include "SceneBlending.h"
+#include "SceneObstacleAvoidance.h"
 
-SceneBlending::SceneBlending()
+SceneObstacleAvoidance::SceneObstacleAvoidance()
 {
 	srand(time(NULL)); // random seed
 
-	Agent* agent;
+	// Walls init
+	Wall* wall = new Wall();
+	wall->setPosition(Vector2D(800, 300));
 
+	walls.push_back(wall);
+	
+	// Agents init
+	Agent* agent;
 	for (int i = 0; i < K_MAX_AGENTS; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new PriorityList({ 
-			new WeightedBlending(
-				{ new Seek, new Flee, new Separation, new Cohesion, new Alignment}, 
-				{ new float(0.05), new float(0.05), new float(0.60f), new float(0.10f), new float(0.20f)})
-			}));
+		
+		ObstacleAvoidance* sb_obstacleAvoidance = new ObstacleAvoidance;
 
+		for (Wall* wall : walls)
+		{
+			sb_obstacleAvoidance->setWalls(wall);
+		}
+		WeightedBlending* sb_weightedBlending = new WeightedBlending({ new Seek,sb_obstacleAvoidance }, { new float(0.2f), new float(10.f) });
+		agent->setBehavior(sb_weightedBlending);
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
@@ -26,6 +35,7 @@ SceneBlending::SceneBlending()
 
 	target = Vector2D(640, 360);
 
+	// GET FLOCK & WALLS ON EVERY AGENT
 	for (Agent* a : agents)
 	{
 		for (Agent *a2 : agents)
@@ -35,15 +45,19 @@ SceneBlending::SceneBlending()
 	}
 }
 
-SceneBlending::~SceneBlending()
+SceneObstacleAvoidance::~SceneObstacleAvoidance()
 {
 	for (int i = 0; i < (int)agents.size(); i++)
 	{
 		delete agents[i];
 	}
+	for (int i = 0; i < (int)walls.size(); i++)
+	{
+		delete walls[i];
+	}
 }
 
-void SceneBlending::update(float dtime, SDL_Event* event)
+void SceneObstacleAvoidance::update(float dtime, SDL_Event* event)
 {
 	/* Keyboard & Mouse events */
 	switch (event->type) {
@@ -69,7 +83,7 @@ void SceneBlending::update(float dtime, SDL_Event* event)
 	}
 }
 
-void SceneBlending::draw()
+void SceneObstacleAvoidance::draw()
 {
 	draw_circle(TheApp::Instance()->getRenderer(), (int)target.x, (int)target.y, 15, 255, 0, 0, 255);
 
@@ -77,9 +91,14 @@ void SceneBlending::draw()
 	{
 		a->draw();
 	}
+
+	for (Wall *w : walls)
+	{
+		w->draw();
+	}
 }
 
-const char* SceneBlending::getTitle()
+const char* SceneObstacleAvoidance::getTitle()
 {
-	return "SDL Steering Behaviors :: Flocking system wth Weighted Blending";
+	return "SDL Steering Behaviors :: Obstacle Avoidance with Flocking System";
 }

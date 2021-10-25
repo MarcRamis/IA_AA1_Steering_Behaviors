@@ -14,8 +14,7 @@ Agent::Agent() : sprite_texture(0),
 				 sprite_num_frames(0),
 	             sprite_w(0),
 	             sprite_h(0),
-	             draw_sprite(false), 
-				 slowingRadius(5.f)
+	             draw_sprite(false)
 {
 }
 
@@ -62,14 +61,14 @@ float Agent::getMass()
 	return mass;
 }
 
-float Agent::getSlowingRadius()
-{
-	return slowingRadius;
-}
-
 std::vector<Agent*> Agent::getNeighbour_flock()
 {
 	return neighbour_Flock;
+}
+
+std::vector<Wall*> Agent::getNeighbour_walls()
+{
+	return neighbour_walls;
 }
 
 void Agent::setFlock(Agent *agent)
@@ -78,6 +77,11 @@ void Agent::setFlock(Agent *agent)
 	{
 		flock.push_back(agent);
 	}
+}
+
+void Agent::setWalls(Wall* wall)
+{
+	walls.push_back(wall);
 }
 
 void Agent::setPosition(Vector2D _position)
@@ -112,12 +116,14 @@ void Agent::update(float dtime, SDL_Event *event)
 
 	// Search neighbour flock
 	setNeighbourFlock(K_NEIGHBOUR_FLOCK_RADIUS);
+	//setNeighbourWall(K_CONE_HALFANGLE_AGENTS,K_CONE_LENGTH_AGENTS);
 	
 	// Apply the steering behavior
 	steering_behaviour->applySteeringForce(this, dtime);
 	
-	// Clean neighbour flock
+	// Clean neighbour entities
 	cleanNeighbourFlock();
+	//cleanNeighbourWalls();
 	
 	// Update orientation
 	if (velocity.Length())
@@ -151,6 +157,11 @@ void Agent::draw()
 		draw_circle(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, 15, 255, 255, 255, 255);
 		SDL_RenderDrawLine(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, (int)(position.x+15*cos(orientation*DEG2RAD)), (int)(position.y+15*sin(orientation*DEG2RAD)));
 		draw_circle(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, K_NEIGHBOUR_FLOCK_RADIUS, 0, 0, 255, 255);
+		
+		// RAYCAST drawing
+		Vector2D velocityNorm = Vector2D(velocity.x / velocity.Length(), velocity.y / velocity.Length());
+		Vector2D raycastVector = position + velocityNorm * K_RAYCAST_LENGTH;
+		draw_line(TheApp::Instance()->getRenderer(), position, raycastVector, 0, 255, 0, 255);
 	}
 }
 
@@ -185,9 +196,64 @@ void Agent::setNeighbourFlock(const float neghbour_radius)
 		}
 	}
 }
+void Agent::setNeighbourWall(const float cone_radius, const float cone_length)
+{
+	Vector2D velocityNorm = Vector2D(velocity.x / velocity.Length(), velocity.y / velocity.Length());
+	Vector2D raycastVector = position + velocityNorm * K_RAYCAST_LENGTH;
+
+	Vector2D intersectionPoint, normalVector;
+	//bool obstacleAvoidanceCollision = false;
+
+	for (Wall *w : walls)
+	{
+		if (SegmentSegmentIntersection(position, position + velocity.Normalize() * K_RAYCAST_LENGTH, 
+			Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y - w->getHeight()), 
+			Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y - w->getHeight())))
+		{
+			neighbour_walls.push_back(w);
+		}
+		if (SegmentSegmentIntersection(position, position + velocity.Normalize() * K_RAYCAST_LENGTH, Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y - w->getHeight()), Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y + w->getHeight())))
+		{
+			neighbour_walls.push_back(w);
+		}
+		if (SegmentSegmentIntersection(position, position + velocity.Normalize() * K_RAYCAST_LENGTH, Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y + w->getHeight()), Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y + w->getHeight())))
+		{
+			neighbour_walls.push_back(w);
+		}
+		if (SegmentSegmentIntersection(position, position + velocity.Normalize() * K_RAYCAST_LENGTH, Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y + w->getHeight()), Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y - w->getHeight())))
+		{
+			neighbour_walls.push_back(w);
+		}
+	}
+	///Vector2D raycastVector = position + velocity.Normalize() * K_RAYCAST_LENGTH;
+	//for (Wall *w : walls)
+	//{
+	//	if (IsInsideCone(Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y + w->getHeight()), position,velocity.Normalize() * cone_length, cone_radius))
+	//	{
+	//		neighbour_walls.push_back(w);
+	//	}
+	//	if (IsInsideCone(Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y + w->getHeight()), position, velocity.Normalize() * cone_length, cone_radius))
+	//	{
+	//		neighbour_walls.push_back(w);
+	//	}
+	//	if (IsInsideCone(Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y - w->getHeight()), position, velocity.Normalize() * cone_length, cone_radius))
+	//	{
+	//		neighbour_walls.push_back(w);
+	//	}
+	//	if (IsInsideCone(Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y - w->getHeight()), position, velocity.Normalize() * cone_length, cone_radius))
+	//	{
+	//		neighbour_walls.push_back(w);
+	//	}
+	//}
+}
 void Agent::cleanNeighbourFlock()
 {
 	neighbour_Flock.clear();
+}
+ 
+void Agent::cleanNeighbourWalls()
+{
+	neighbour_walls.clear();
 }
 Vector2D Agent::SteeringBehavior::GetSteeringForce(Agent* agent, float dtime)
 {
