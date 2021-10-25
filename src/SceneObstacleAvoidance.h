@@ -3,7 +3,6 @@
 #include "Scene.h"
 #include "Agent.h"
 #include "Wall.h"
-#include "Triangle.h"
 
 #include "WeightedBlending.h"
 #include "Seek.h"
@@ -27,6 +26,5 @@ private:
     
     std::vector<Agent*> agents;
     std::vector<Wall*> walls;
-    std::vector<Triangle*> triangles;
     Vector2D target;
 };
