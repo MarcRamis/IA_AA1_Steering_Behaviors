@@ -157,7 +157,11 @@ void Agent::draw()
 		draw_circle(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, 15, 255, 255, 255, 255);
 		SDL_RenderDrawLine(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, (int)(position.x+15*cos(orientation*DEG2RAD)), (int)(position.y+15*sin(orientation*DEG2RAD)));
 		draw_circle(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, K_NEIGHBOUR_FLOCK_RADIUS, 0, 0, 255, 255);
+		
 	}
+
+	//Vector2D raycastVector = position + velocity.Normalize() * K_RAYCAST_LENGTH;
+	//draw_line(TheApp::Instance()->getRenderer(), position, raycastVector, 0, 0, 255, 255);
 }
 
 bool Agent::loadSpriteTexture(char* filename, int _num_frames)
@@ -193,6 +197,7 @@ void Agent::setNeighbourFlock(const float neghbour_radius)
 }
 void Agent::setNeighbourWall(const float cone_radius, const float cone_length)
 {
+	//Vector2D raycastVector = position + velocity.Normalize() * K_RAYCAST_LENGTH;
 	//for (Wall *w : walls)
 	//{
 	//	if (IsInsideCone(Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y + w->getHeight()), position,velocity.Normalize() * cone_length, cone_radius))

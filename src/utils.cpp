@@ -4,6 +4,8 @@
 #include <string>
 #include <SDL.h>
 
+#include "Vector2D.h"
+
 /* Get the resource path for resources located in res/subDir */
 std::string getResourcePath(const std::string &subDir = "") {
 	//We need to choose the path separator properly based on which
@@ -122,4 +124,10 @@ void draw_triangle(SDL_Renderer* surface, int leftX, int leftY, int rightX, int 
 
 	//Update the Renderer.
 	SDL_RenderPresent(surface);
+}
+
+void draw_line(SDL_Renderer* surface, Vector2D p1, Vector2D p2, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+{
+	SDL_SetRenderDrawColor(surface, r, g, b, a);
+	SDL_RenderDrawLine(surface, p1.x, p1.y, p2.x, p2.y);
 }
