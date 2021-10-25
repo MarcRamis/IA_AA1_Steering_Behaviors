@@ -13,19 +13,22 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 	// Agents init
 	Agent* agent;
 
-	ObstacleAvoidance sb_obstacleAvoidance;
-
-	for( Wall* wall : walls)
+	ObstacleAvoidance *sb_obstacleAvoidance = new ObstacleAvoidance;
+	
+	for(Wall* wall : walls)
 	{
-		sb_obstacleAvoidance.setWalls(wall);
+		sb_obstacleAvoidance->setWalls(wall);
 	}
+
+	WeightedBlending* sb_weightedBlending = new WeightedBlending({ new Seek, sb_obstacleAvoidance}, {new float(0.2f), new float(10.f)});
 
 	for (int i = 0; i < K_MAX_AGENTS; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new WeightedBlending(
-			{ new Seek, new Separation, new Cohesion, new Alignment},
-			{ new float(0.05), new float(0.65f), new float(0.10f), new float(0.20f)}));
+		//agent->setBehavior(new WeightedBlending(
+		//	{ new Seek, new Separation, new Cohesion, new Alignment},
+		//	{ new float(0.05), new float(0.65f), new float(0.10f), new float(0.20f)}));
+		agent->setBehavior(sb_weightedBlending);
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));

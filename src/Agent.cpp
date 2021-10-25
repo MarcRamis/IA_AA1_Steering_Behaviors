@@ -159,11 +159,10 @@ void Agent::draw()
 		draw_circle(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, K_NEIGHBOUR_FLOCK_RADIUS, 0, 0, 255, 255);
 		
 		// RAYCAST drawing
+		Vector2D velocityNorm = Vector2D(velocity.x / velocity.Length(), velocity.y / velocity.Length());
+		Vector2D raycastVector = position + velocityNorm * K_RAYCAST_LENGTH;
+		draw_line(TheApp::Instance()->getRenderer(), position, raycastVector, 0, 255, 0, 255);
 	}
-	
-	Vector2D velocityNorm = Vector2D(velocity.x / velocity.Length(), velocity.y / velocity.Length());
-	Vector2D raycastVector = position + velocityNorm * K_RAYCAST_LENGTH;
-	draw_line(TheApp::Instance()->getRenderer(), position, raycastVector, 0, 0, 255, 255);
 }
 
 bool Agent::loadSpriteTexture(char* filename, int _num_frames)

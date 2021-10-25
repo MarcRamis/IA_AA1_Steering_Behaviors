@@ -18,5 +18,9 @@ public:
 	~ObstacleAvoidance();
 	Vector2D calculateSteeringForce(Agent* agent, float dtime);
 
-	void setWalls(Wall *wall);
+	void setWalls(Wall* wall);
+
+private:
+
+	bool IsObstacleAvoidance(Agent* agent, Vector2D raycast, Wall* w, Vector2D& intersectionPoints, Vector2D& normalVector);
 };
