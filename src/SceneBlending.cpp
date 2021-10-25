@@ -9,11 +9,12 @@ SceneBlending::SceneBlending()
 	for (int i = 0; i < K_MAX_AGENTS; i++)
 	{
 		agent = new Agent;
-		agent->setBehavior(new PriorityList({ 
-			new WeightedBlending(
-				{ new Seek, new Flee, new Separation, new Cohesion, new Alignment}, 
-				{ new float(0.05), new float(0.05), new float(0.60f), new float(0.10f), new float(0.20f)})
-			}));
+
+		WeightedBlending* sb_weightedBlending = new WeightedBlending(
+			{ new Separation, new Cohesion, new Alignment },
+			{ new float(0.60f), new float(0.20f), new float(0.20f) });
+		PriorityList* sb_priorityList = new PriorityList();
+		agent->setBehavior(new PriorityList({ sb_weightedBlending, new Seek, new Flee}));
 
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
@@ -81,5 +82,5 @@ void SceneBlending::draw()
 
 const char* SceneBlending::getTitle()
 {
-	return "SDL Steering Behaviors :: Flocking system wth Weighted Blending";
+	return "SDL Steering Behaviors :: Flocking system";
 }

@@ -25,8 +25,8 @@ Vector2D ObstacleAvoidance::calculateSteeringForce(Agent* agent, float dtime)
 		if (IsObstacleAvoidance(agent, raycastVector, w, intersectionPoint,normalVector)) {
 			avoidTarget = intersectionPoint;
 			avoidTarget += normalVector * K_AVOIDANCE_DISTANCE;	
+			
 			desiredVelocity = avoidTarget - agent->getPosition(); // Seek
-
 			desiredVelocity.Normalize();
 			desiredVelocity *= agent->getMaxVelocity();
 			Vector2D steeringForce = desiredVelocity - agent->getVelocity();

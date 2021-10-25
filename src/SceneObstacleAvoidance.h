@@ -4,6 +4,7 @@
 #include "Agent.h"
 #include "Wall.h"
 
+#include "PriorityList.h"
 #include "WeightedBlending.h"
 #include "Seek.h"
 #include "Flee.h"

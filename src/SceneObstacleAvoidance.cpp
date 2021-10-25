@@ -6,7 +6,7 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 
 	// Walls init
 	Wall* wall = new Wall(100, 250, Vector2D(800, 300));
-	Wall* wall2 = new Wall(100, 250, Vector2D(200, 300));
+	Wall* wall2 = new Wall(100, 250, Vector2D(400, 400));
 
 	walls.push_back(wall);
 	walls.push_back(wall2);
@@ -23,18 +23,21 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 		{
 			sb_obstacleAvoidance->setWalls(wall);
 		}
-		WeightedBlending* sb_weightedBlending = new WeightedBlending({ new Seek,sb_obstacleAvoidance }, { new float(0.2f), new float(10.f) });
-		agent->setBehavior(sb_weightedBlending);
+		//WeightedBlending* sb_weightedBlending = new WeightedBlending({ new Separation, new Cohesion, new Alignment}, { new float(0.25f), new float(0.50f), new float(0.25f) });
+		//PriorityList* sb_priorityList = new PriorityList({ sb_obstacleAvoidance, sb_weightedBlending, new Seek, new Flee});
+		agent->setBehavior(new WeightedBlending({ sb_obstacleAvoidance, new Seek }, {new float(10.f), new float(0.2f)}));
+
+		
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
 		agent->setPosition(Vector2D(randSpawnW, randSpawnH));
 
-		agent->setTarget(Vector2D(640, 360));
+		agent->setTarget(Vector2D(1000, 360));
 		agent->loadSpriteTexture("../res/soldier.png", 4);
 		agents.push_back(agent);
 	}
 
-	target = Vector2D(640, 360);
+	target = Vector2D(1000, 360);
 
 	// GET FLOCK & WALLS ON EVERY AGENT
 	for (Agent* a : agents)
@@ -101,5 +104,5 @@ void SceneObstacleAvoidance::draw()
 
 const char* SceneObstacleAvoidance::getTitle()
 {
-	return "SDL Steering Behaviors :: Obstacle Avoidance with Flocking System";
+	return "SDL Steering Behaviors :: Obstacle Avoidance. Right is not working.";
 }
