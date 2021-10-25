@@ -7,6 +7,13 @@ Wall::Wall() :
 {
 }
 
+Wall::Wall(float _weight, float _height, Vector2D _pos) :
+	position(_pos),
+	weight(_weight),
+	height(_height)
+{
+}
+
 Wall::~Wall()
 {
 }
@@ -43,5 +50,5 @@ void Wall::setHeight(float _height)
 
 void Wall::draw()
 {
-	draw_cube(TheApp::Instance()->getRenderer(),(int)position.x - weight / 2, (int)position.y - height / 2,(int)weight, (int)height, 255,0,0,255);
+	draw_cube(TheApp::Instance()->getRenderer(),(int)position.x  - weight / 2, (int)position.y  - height / 2, (int)weight, (int)height, 255, 0, 0, 255);
 }

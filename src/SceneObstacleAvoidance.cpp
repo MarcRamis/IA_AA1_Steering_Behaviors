@@ -5,10 +5,11 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 	srand(time(NULL)); // random seed
 
 	// Walls init
-	Wall* wall = new Wall();
-	wall->setPosition(Vector2D(800, 300));
+	Wall* wall = new Wall(100, 250, Vector2D(800, 300));
+	Wall* wall2 = new Wall(100, 250, Vector2D(200, 300));
 
 	walls.push_back(wall);
+	walls.push_back(wall2);
 	
 	// Agents init
 	Agent* agent;

@@ -12,6 +12,7 @@ private:
 public:
 	
 	Wall();
+	Wall(float _weight, float _height, Vector2D _pos);
 	~Wall();
 
 	Vector2D getPosition();
