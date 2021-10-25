@@ -7,6 +7,7 @@ ObstacleAvoidance::ObstacleAvoidance()
 
 ObstacleAvoidance::~ObstacleAvoidance()
 {
+	walls.clear();
 }
 
 Vector2D ObstacleAvoidance::calculateSteeringForce(Agent* agent, float dtime)
@@ -24,7 +25,7 @@ Vector2D ObstacleAvoidance::calculateSteeringForce(Agent* agent, float dtime)
 		if (IsObstacleAvoidance(agent, raycastVector, w, intersectionPoint,normalVector)) {
 			avoidTarget = intersectionPoint;
 			avoidTarget += normalVector * K_AVOIDANCE_DISTANCE;	
-			desiredVelocity = avoidTarget - agent->getPosition();// Seek
+			desiredVelocity = avoidTarget - agent->getPosition(); // Seek
 		}
 	}
 	

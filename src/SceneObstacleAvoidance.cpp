@@ -6,28 +6,23 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 
 	// Walls init
 	Wall* wall = new Wall();
-	wall->setPosition(Vector2D(640, 360));
+	wall->setPosition(Vector2D(800, 300));
 
 	walls.push_back(wall);
-
+	
 	// Agents init
 	Agent* agent;
-
-	ObstacleAvoidance *sb_obstacleAvoidance = new ObstacleAvoidance;
-	
-	for(Wall* wall : walls)
-	{
-		sb_obstacleAvoidance->setWalls(wall);
-	}
-
-	WeightedBlending* sb_weightedBlending = new WeightedBlending({ new Seek, sb_obstacleAvoidance}, {new float(0.2f), new float(10.f)});
-
 	for (int i = 0; i < K_MAX_AGENTS; i++)
 	{
 		agent = new Agent;
-		//agent->setBehavior(new WeightedBlending(
-		//	{ new Seek, new Separation, new Cohesion, new Alignment},
-		//	{ new float(0.05), new float(0.65f), new float(0.10f), new float(0.20f)}));
+		
+		ObstacleAvoidance* sb_obstacleAvoidance = new ObstacleAvoidance;
+
+		for (Wall* wall : walls)
+		{
+			sb_obstacleAvoidance->setWalls(wall);
+		}
+		WeightedBlending* sb_weightedBlending = new WeightedBlending({ new Seek,sb_obstacleAvoidance }, { new float(0.2f), new float(10.f) });
 		agent->setBehavior(sb_weightedBlending);
 		int randSpawnW = rand() % (1280);
 		int randSpawnH = rand() % (768);
@@ -40,9 +35,6 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 
 	target = Vector2D(640, 360);
 
-
-
-
 	// GET FLOCK & WALLS ON EVERY AGENT
 	for (Agent* a : agents)
 	{
@@ -50,20 +42,7 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 		{
 			a->setFlock(a2);
 		}
-
-		for (Wall* w : walls)
-		{
-			a->setWalls(w);
-		}
 	}
-
-	// Triangles init?
-	//riangle* triangle = new Triangle();
-	//riangle->setLeft(Vector2D(0, 480));
-	//riangle->setRight(Vector2D(640, 480));
-	//riangle->setTop(Vector2D(320, 0));
-	//
-	//riangles.push_back(triangle);
 }
 
 SceneObstacleAvoidance::~SceneObstacleAvoidance()
@@ -71,6 +50,10 @@ SceneObstacleAvoidance::~SceneObstacleAvoidance()
 	for (int i = 0; i < (int)agents.size(); i++)
 	{
 		delete agents[i];
+	}
+	for (int i = 0; i < (int)walls.size(); i++)
+	{
+		delete walls[i];
 	}
 }
 
@@ -113,11 +96,6 @@ void SceneObstacleAvoidance::draw()
 	{
 		w->draw();
 	}
-
-	//for (Triangle* t : triangles)
-	//{
-	//	t->draw();
-	//}
 }
 
 const char* SceneObstacleAvoidance::getTitle()

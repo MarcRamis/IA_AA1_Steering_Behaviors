@@ -16,7 +16,7 @@ int main(int argc, char ** argv)
 
 	SDL_SimpleApp *app = SDL_SimpleApp::Instance();
 	
-	Scene *curr_scene = new SceneObstacleAvoidance;
+	Scene *curr_scene = new SceneBlending;
 	app->setWindowTitle(curr_scene->getTitle());
 
 	while (!quit)
