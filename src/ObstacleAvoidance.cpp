@@ -26,15 +26,17 @@ Vector2D ObstacleAvoidance::calculateSteeringForce(Agent* agent, float dtime)
 			avoidTarget = intersectionPoint;
 			avoidTarget += normalVector * K_AVOIDANCE_DISTANCE;	
 			desiredVelocity = avoidTarget - agent->getPosition(); // Seek
+
+			desiredVelocity.Normalize();
+			desiredVelocity *= agent->getMaxVelocity();
+			Vector2D steeringForce = desiredVelocity - agent->getVelocity();
+			steeringForce.Normalize();
+
+			return steeringForce * agent->getMaxForce();
 		}
 	}
 	
-	desiredVelocity.Normalize();
-	desiredVelocity *= agent->getMaxVelocity();
-	Vector2D steeringForce = desiredVelocity - agent->getVelocity();
-	steeringForce.Normalize();
-
-	return steeringForce * agent->getMaxForce();
+	return Vector2D(0.f,0.f);
 }
 
 void ObstacleAvoidance::setWalls(Wall* wall)

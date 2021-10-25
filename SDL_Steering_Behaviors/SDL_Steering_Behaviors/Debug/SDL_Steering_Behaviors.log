@@ -1,40 +1,5 @@
 ﻿  Agent.cpp
 D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(18,1): warning C4305: 'initializing': truncation from 'double' to 'float'
 D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(159,84): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-  Alignment.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Alignment.cpp(20,54): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-  Cohesion.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Cohesion.cpp(20,49): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-  Flee.cpp
-  main.cpp
-  PriorityList.cpp
-  ObstacleAvoidance.cpp
-  SceneBlending.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(15,22): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(15,39): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(20,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneBlending.cpp(20,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  SceneObstacleAvoidance.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(29,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(29,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Seek.cpp
-  Separation.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Separation.cpp(15,55): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-  Triangle.cpp
-  utils.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\utils.cpp(132,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\utils.cpp(132,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\utils.cpp(132,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\utils.cpp(132,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Wall.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Wall.cpp(46,92): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Wall.cpp(46,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  WeightedBlending.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\WeightedBlending.cpp(27,23): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\PriorityList.cpp(28): warning C4715: 'PriorityList::calculateSteeringForce': not all control paths return a value
-  LINK : D:\Uni Projects\IA\AA1_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe not found or not built by the last incremental link; performing full link
 SDL_SimpleApp.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'SDL_SimpleApp.obj' or at 'D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\vc142.pdb'; linking object as if no debug info
   SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
