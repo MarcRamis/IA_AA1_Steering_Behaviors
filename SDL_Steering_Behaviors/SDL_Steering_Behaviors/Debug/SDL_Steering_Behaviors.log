@@ -1,4 +1,6 @@
-﻿  Agent.cpp
-C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.cpp(18,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\Agent.cpp(159,84): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+﻿  SceneBlending.cpp
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\SceneBlending.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\SceneBlending.cpp(14,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\SceneBlending.cpp(17,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\src\SceneBlending.cpp(17,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SDL_Steering_Behaviors.vcxproj -> C:\Users\marc.ramis\Desktop\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

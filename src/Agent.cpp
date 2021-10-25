@@ -158,10 +158,12 @@ void Agent::draw()
 		SDL_RenderDrawLine(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, (int)(position.x+15*cos(orientation*DEG2RAD)), (int)(position.y+15*sin(orientation*DEG2RAD)));
 		draw_circle(TheApp::Instance()->getRenderer(), (int)position.x, (int)position.y, K_NEIGHBOUR_FLOCK_RADIUS, 0, 0, 255, 255);
 		
+		// RAYCAST drawing
 	}
-
-	//Vector2D raycastVector = position + velocity.Normalize() * K_RAYCAST_LENGTH;
-	//draw_line(TheApp::Instance()->getRenderer(), position, raycastVector, 0, 0, 255, 255);
+	
+	Vector2D velocityNorm = Vector2D(velocity.x / velocity.Length(), velocity.y / velocity.Length());
+	Vector2D raycastVector = position + velocityNorm * K_RAYCAST_LENGTH;
+	draw_line(TheApp::Instance()->getRenderer(), position, raycastVector, 0, 0, 255, 255);
 }
 
 bool Agent::loadSpriteTexture(char* filename, int _num_frames)
@@ -197,7 +199,34 @@ void Agent::setNeighbourFlock(const float neghbour_radius)
 }
 void Agent::setNeighbourWall(const float cone_radius, const float cone_length)
 {
-	//Vector2D raycastVector = position + velocity.Normalize() * K_RAYCAST_LENGTH;
+	Vector2D velocityNorm = Vector2D(velocity.x / velocity.Length(), velocity.y / velocity.Length());
+	Vector2D raycastVector = position + velocityNorm * K_RAYCAST_LENGTH;
+
+	Vector2D intersectionPoint, normalVector;
+	//bool obstacleAvoidanceCollision = false;
+
+	for (Wall *w : walls)
+	{
+		if (SegmentSegmentIntersection(position, position + velocity.Normalize() * K_RAYCAST_LENGTH, 
+			Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y - w->getHeight()), 
+			Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y - w->getHeight())))
+		{
+			neighbour_walls.push_back(w);
+		}
+		if (SegmentSegmentIntersection(position, position + velocity.Normalize() * K_RAYCAST_LENGTH, Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y - w->getHeight()), Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y + w->getHeight())))
+		{
+			neighbour_walls.push_back(w);
+		}
+		if (SegmentSegmentIntersection(position, position + velocity.Normalize() * K_RAYCAST_LENGTH, Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y + w->getHeight()), Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y + w->getHeight())))
+		{
+			neighbour_walls.push_back(w);
+		}
+		if (SegmentSegmentIntersection(position, position + velocity.Normalize() * K_RAYCAST_LENGTH, Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y + w->getHeight()), Vector2D(w->getPosition().x - w->getWeight(), w->getPosition().y - w->getHeight())))
+		{
+			neighbour_walls.push_back(w);
+		}
+	}
+	///Vector2D raycastVector = position + velocity.Normalize() * K_RAYCAST_LENGTH;
 	//for (Wall *w : walls)
 	//{
 	//	if (IsInsideCone(Vector2D(w->getPosition().x + w->getWeight(), w->getPosition().y + w->getHeight()), position,velocity.Normalize() * cone_length, cone_radius))
@@ -222,7 +251,7 @@ void Agent::cleanNeighbourFlock()
 {
 	neighbour_Flock.clear();
 }
-
+ 
 void Agent::cleanNeighbourWalls()
 {
 	neighbour_walls.clear();

@@ -4,8 +4,21 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 {
 	srand(time(NULL)); // random seed
 
+	// Walls init
+	Wall* wall = new Wall();
+	wall->setPosition(Vector2D(640, 360));
+
+	walls.push_back(wall);
+
 	// Agents init
 	Agent* agent;
+
+	ObstacleAvoidance sb_obstacleAvoidance;
+
+	for( Wall* wall : walls)
+	{
+		sb_obstacleAvoidance.setWalls(wall);
+	}
 
 	for (int i = 0; i < K_MAX_AGENTS; i++)
 	{
@@ -24,11 +37,7 @@ SceneObstacleAvoidance::SceneObstacleAvoidance()
 
 	target = Vector2D(640, 360);
 
-	// Walls init
-	Wall* wall = new Wall();
-	wall->setPosition(Vector2D(640, 360));
 
-	walls.push_back(wall);
 
 
 	// GET FLOCK & WALLS ON EVERY AGENT

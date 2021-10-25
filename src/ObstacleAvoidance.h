@@ -11,8 +11,12 @@ class ObstacleAvoidance :
 {
 private:
 
+	std::vector<Wall*> walls;
+
 public:
 	ObstacleAvoidance();
 	~ObstacleAvoidance();
 	Vector2D calculateSteeringForce(Agent* agent, float dtime);
+
+	void setWalls(Wall *wall);
 };
