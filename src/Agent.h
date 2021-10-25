@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Constants.h"
-#include "Utility.h"
 #include "Wall.h"
 
 #include <iostream>

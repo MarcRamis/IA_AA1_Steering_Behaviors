@@ -1,5 +1,179 @@
 ﻿  Agent.cpp
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(18,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\Uni Projects\IA\AA1_Steering_Behaviors\src\Agent.cpp(159,84): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-SDL_SimpleApp.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'SDL_SimpleApp.obj' or at 'D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\vc142.pdb'; linking object as if no debug info
-  SDL_Steering_Behaviors.vcxproj -> D:\Uni Projects\IA\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\Agent.cpp(18,1): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\Agent.cpp(159,84): warning C4244: 'argumento': conversión de 'const float' a 'int'; posible pérdida de datos
+  Alignment.cpp
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\Alignment.cpp(20,54): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  Cohesion.cpp
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\Cohesion.cpp(20,49): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  Flee.cpp
+  main.cpp
+  PriorityList.cpp
+  ObstacleAvoidance.cpp
+  SceneBlending.cpp
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\SceneBlending.cpp(5,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\SceneBlending.cpp(15,22): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\SceneBlending.cpp(15,39): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\SceneBlending.cpp(20,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\SceneBlending.cpp(20,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  SceneObstacleAvoidance.cpp
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(5,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(29,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\SceneObstacleAvoidance.cpp(29,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Seek.cpp
+  Separation.cpp
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\Separation.cpp(15,55): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+  Triangle.cpp
+  WeightedBlending.cpp
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\WeightedBlending.cpp(27,23): warning C4018: '<': no coinciden signed/unsigned
+  Generando código...
+H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\src\PriorityList.cpp(28): warning C4715: 'PriorityList::calculateSteeringForce': no todas las rutas de acceso de control devuelven un valor
+  LINK : no se encontró H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  SDL_Steering_Behaviors.vcxproj -> H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
+
+Resumen del rendimiento del proyecto:
+     7337 ms H:\Proyectos\Visual Studio Projects\Framework (fundamentos IA)\AA1_Steering_Behaviors\SDL_Steering_Behaviors\SDL_Steering_Behaviors.vcxproj   1 llamadas
+               7337 ms Build                                      1 llamadas
+
+Resumen del rendimiento de destino:
+        0 ms _BuildCompileAction                        1 llamadas
+        0 ms _Link                                      1 llamadas
+        0 ms AfterLink                                  1 llamadas
+        0 ms ComputeLinkImportLibraryOutputsForClean    1 llamadas
+        0 ms ComputeLinkSwitches                        1 llamadas
+        0 ms PreLinkEvent                               1 llamadas
+        0 ms PrepareResourceNames                       1 llamadas
+        0 ms CreateCustomManifestResourceNames          1 llamadas
+        0 ms ComputeManifestInputsTargets               1 llamadas
+        0 ms ComputeCLGeneratedLinkInputs               1 llamadas
+        0 ms ComputeManifestGeneratedLinkerInputs       1 llamadas
+        0 ms ComputeRCGeneratedLinkInputs               1 llamadas
+        0 ms ComputeRCOutputs                           1 llamadas
+        0 ms BeforeLink                                 1 llamadas
+        0 ms BuildLinkTraverse                          1 llamadas
+        0 ms BuildCompile                               1 llamadas
+        0 ms AfterBuildCompileEvent                     1 llamadas
+        0 ms _ResourceCompile                           1 llamadas
+        0 ms AfterResourceCompile                       1 llamadas
+        0 ms MakeDirsForResourceCompile                 1 llamadas
+        0 ms BeforeResourceCompile                      1 llamadas
+        0 ms _ClCompile                                 1 llamadas
+        0 ms _ALink                                     1 llamadas
+        0 ms _Manifest                                  1 llamadas
+        0 ms ResolvedXDCMake                            1 llamadas
+        0 ms ComputeCLCompileGeneratedXDCFiles          1 llamadas
+        0 ms AfterBuild                                 1 llamadas
+        0 ms BuildLink                                  1 llamadas
+        0 ms _BuildLinkAction                           1 llamadas
+        0 ms PostBuildEvent                             1 llamadas
+        0 ms PrepareForRun                              1 llamadas
+        0 ms CopyFilesToOutputDirectory                 1 llamadas
+        0 ms _CheckForCompileOutputs                    1 llamadas
+        0 ms _CopySourceItemsToOutputDirectory          1 llamadas
+        0 ms _GetCopyToOutputDirectoryItemsFromThisProject   1 llamadas
+        0 ms GetCopyToOutputDirectoryXamlAppDefs        1 llamadas
+        0 ms AfterClCompile                             1 llamadas
+        0 ms _PopulateCommonStateForGetCopyToOutputDirectoryItems   1 llamadas
+        0 ms _Appverifier                               1 llamadas
+        0 ms CreateSatelliteAssemblies                  1 llamadas
+        0 ms _GenerateSatelliteAssemblyInputs           1 llamadas
+        0 ms MakeDirsForFxc                             1 llamadas
+        0 ms BuiltProjectOutputGroup                    1 llamadas
+        0 ms _BscMake                                   1 llamadas
+        0 ms MakeDirsForBscMake                         1 llamadas
+        0 ms ComputeCLCompileGeneratedSbrFiles          1 llamadas
+        0 ms _XdcMake                                   1 llamadas
+        0 ms MakeDirsForXdcMake                         1 llamadas
+        0 ms _Deploy                                    1 llamadas
+        0 ms SelectClCompile                            1 llamadas
+        0 ms Build                                      1 llamadas
+        0 ms BeforeBuildGenerateSources                 1 llamadas
+        0 ms ResolveProjectReferences                   1 llamadas
+        0 ms MakeDirsForMidl                            1 llamadas
+        0 ms _Xsd                                       1 llamadas
+        0 ms GetReferenceAssemblyPaths                  1 llamadas
+        0 ms GetResolvedWinMD                           1 llamadas
+        0 ms _CheckWindowsSDKInstalled                  1 llamadas
+        0 ms CustomBuild                                1 llamadas
+        0 ms SetCABuildNativeEnvironmentVariables       1 llamadas
+        0 ms ComputeCustomBuildOutput                   1 llamadas
+        0 ms SelectCustomBuild                          1 llamadas
+        0 ms _SelectedFiles                             1 llamadas
+        0 ms PreBuildEvent                              1 llamadas
+        0 ms ExpandSDKReferences                        1 llamadas
+        0 ms BuildGenerateSourcesTraverse               1 llamadas
+        0 ms ResolveAssemblyReferences                  1 llamadas
+        0 ms PrepareProjectReferences                   1 llamadas
+        0 ms ResolveReferences                          1 llamadas
+        0 ms ComputeMIDLGeneratedCompileInputs          1 llamadas
+        0 ms AfterMidl                                  1 llamadas
+        0 ms _PrepareForBuild                           1 llamadas
+        0 ms _PrepareForReferenceResolution             1 llamadas
+        0 ms BeforeResolveReferences                    1 llamadas
+        0 ms GetReferencedVCProjectsInfo                1 llamadas
+        0 ms FindReferenceAssembliesForReferences       1 llamadas
+        0 ms BeforeClCompile                            1 llamadas
+        0 ms BuildCompileTraverse                       1 llamadas
+        0 ms _SplitProjectReferencesByFileExistence     1 llamadas
+        0 ms _BuildGenerateSourcesAction                1 llamadas
+        0 ms AfterBuildGenerateSourcesEvent             1 llamadas
+        0 ms AfterBuildGenerateSources                  1 llamadas
+        0 ms _Midl                                      1 llamadas
+        0 ms _AddOutputPathToGlobalPropertiesToRemove   1 llamadas
+        0 ms BuildGenerateSources                       1 llamadas
+        0 ms AfterResolveReferences                     1 llamadas
+        1 ms MakeDirsForCl                              1 llamadas
+        1 ms _GetProjectReferenceTargetFrameworkProperties   1 llamadas
+        1 ms AssignProjectConfiguration                 1 llamadas
+        1 ms ComputeLegacyManifestEmbedding             1 llamadas
+        1 ms _CheckForInvalidConfigurationAndPlatform   1 llamadas
+        1 ms DoLinkOutputFilesMatch                     1 llamadas
+        1 ms SetTelemetryEnvironmentVariables           1 llamadas
+        1 ms ResolveSDKReferences                       1 llamadas
+        1 ms _GetCopyToOutputDirectoryItemsFromTransitiveProjectReferences   1 llamadas
+        1 ms AssignTargetPaths                          1 llamadas
+        1 ms ComputeCLOutputs                           1 llamadas
+        1 ms SetBuildDefaultEnvironmentVariables        1 llamadas
+        1 ms ComputeLinkInputsFromProject               1 llamadas
+        1 ms MakeDirsForLink                            1 llamadas
+        1 ms GetFrameworkPaths                          1 llamadas
+        1 ms RegisterOutput                             1 llamadas
+        1 ms ContentFilesProjectOutputGroup             1 llamadas
+        1 ms ComputeCLInputPDBName                      1 llamadas
+        1 ms WarnCompileDuplicatedFilename              1 llamadas
+        1 ms FinalizeBuildStatus                        1 llamadas
+        1 ms IncrementalClean                           1 llamadas
+        1 ms CopyFileToFolders                          1 llamadas
+        2 ms SatelliteDllsProjectOutputGroup            1 llamadas
+        2 ms PrepareForBuild                            1 llamadas
+        2 ms FixupCLCompileOptions                      1 llamadas
+        2 ms GetCopyToOutputDirectoryItems              1 llamadas
+        2 ms InitializeBuildStatus                      1 llamadas
+        2 ms SplitResourcesByCulture                    1 llamadas
+        4 ms ComputeReferenceCLInput                    1 llamadas
+        9 ms _CleanGetCurrentAndPriorFileWrites         1 llamadas
+       13 ms CreateRecipeFile                           1 llamadas
+      571 ms Link                                       1 llamadas
+     6703 ms ClCompile                                  1 llamadas
+
+Resumen del rendimiento de la tarea:
+        0 ms Message                                    3 llamadas
+        0 ms MakeDir                                   10 llamadas
+        0 ms CheckVCToolsetVersion                      1 llamadas
+        1 ms MSBuild                                    1 llamadas
+        1 ms AssignProjectConfiguration                 1 llamadas
+        1 ms RemoveDuplicates                           2 llamadas
+        1 ms AssignTargetPath                           7 llamadas
+        1 ms ConvertToAbsolutePath                      1 llamadas
+        1 ms SetEnv                                     8 llamadas
+        1 ms WriteLinesToFile                           1 llamadas
+        1 ms Touch                                      2 llamadas
+        1 ms Delete                                     2 llamadas
+        1 ms ReadLinesFromFile                          2 llamadas
+        1 ms GetOutOfDateItems                          3 llamadas
+        2 ms CreateItem                                 2 llamadas
+        2 ms CallTarget                                 2 llamadas
+        2 ms AssignCulture                              1 llamadas
+        7 ms FindUnderPath                              5 llamadas
+       13 ms GenerateDesktopDeployRecipe                1 llamadas
+      569 ms Link                                       1 llamadas
+     6701 ms CL                                         1 llamadas
