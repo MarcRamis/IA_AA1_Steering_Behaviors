@@ -116,14 +116,14 @@ void Agent::update(float dtime, SDL_Event *event)
 
 	// Search neighbour flock
 	setNeighbourFlock(K_NEIGHBOUR_FLOCK_RADIUS);
-	setNeighbourWall(K_CONE_HALFANGLE_AGENTS,K_CONE_LENGTH_AGENTS);
+	//setNeighbourWall(K_CONE_HALFANGLE_AGENTS,K_CONE_LENGTH_AGENTS);
 	
 	// Apply the steering behavior
 	steering_behaviour->applySteeringForce(this, dtime);
 	
 	// Clean neighbour entities
 	cleanNeighbourFlock();
-	cleanNeighbourWalls();
+	//cleanNeighbourWalls();
 	
 	// Update orientation
 	if (velocity.Length())
