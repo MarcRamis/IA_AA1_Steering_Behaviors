@@ -3,10 +3,8 @@
 #include <SDL_image.h>
 
 #include "SDL_SimpleApp.h"
-#include "SceneSeek.h"
-#include "SceneFlee.h"
-#include "SceneSeekFlee.h"
 #include "SceneBlending.h"
+#include "SceneObstacleAvoidance.h"
 
 
 using namespace std;
@@ -33,25 +31,13 @@ int main(int argc, char ** argv)
 			if (event.key.keysym.scancode == SDL_SCANCODE_1)
 			{
 				delete(curr_scene);
-				curr_scene = new SceneSeek;
+				curr_scene = new SceneBlending;
 				app->setWindowTitle(curr_scene->getTitle());
 			}
 			if (event.key.keysym.scancode == SDL_SCANCODE_2)
 			{
 				delete(curr_scene);
-				curr_scene = new SceneFlee;
-				app->setWindowTitle(curr_scene->getTitle());
-			}
-			if (event.key.keysym.scancode == SDL_SCANCODE_3)
-			{
-				delete(curr_scene);
-				curr_scene = new SceneSeekFlee;
-				app->setWindowTitle(curr_scene->getTitle());
-			}
-			if (event.key.keysym.scancode == SDL_SCANCODE_4)
-			{
-				delete(curr_scene);
-				curr_scene = new SceneBlending;
+				curr_scene = new SceneObstacleAvoidance;
 				app->setWindowTitle(curr_scene->getTitle());
 			}
 

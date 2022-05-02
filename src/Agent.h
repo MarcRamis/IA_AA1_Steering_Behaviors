@@ -1,4 +1,8 @@
 #pragma once
+
+#include "Constants.h"
+#include "Wall.h"
+
 #include <iostream>
 #include <minmax.h>
 #include <SDL.h>
@@ -9,6 +13,8 @@
 
 #include <vector>
 
+using namespace Vector2DUtils;
+
 class Agent
 {
 public:
@@ -18,7 +24,7 @@ public:
 		SteeringBehavior() {};
 		virtual ~SteeringBehavior() {};
 		virtual Vector2D calculateSteeringForce(Agent* agent, float dtime) = 0;
-		virtual Vector2D calculateSteeringForce(std::vector<Agent::SteeringBehavior*> steeringBehaviours, std::vector<float> weight, float dtime) = 0;
+		Vector2D GetSteeringForce(Agent* agent, float dtime);
 		void applySteeringForce(Agent *agent, float dtime) {
 			Vector2D steeringForce = this->calculateSteeringForce(agent, dtime);
 			Vector2D acceleration = steeringForce / agent->getMass();
@@ -29,15 +35,6 @@ public:
 			agent->setPosition(agent->getPosition() + agent->getVelocity() * dtime);
 		};
 	};
-	
-	class Flocking 
-	{
-	public:
-		std::vector<SteeringBehavior> steering_behaviour;
-		float weight;
-		
-		// Función que sume todos los steering
-	};
 
 private:
 	
@@ -46,12 +43,17 @@ private:
 	Vector2D velocity;
 	Vector2D target;
 
+	std::vector<Agent*> flock;
+	std::vector<Agent*> neighbour_Flock;
+
+	std::vector<Wall*> walls;
+	std::vector<Wall*> neighbour_walls;
+
 	float mass;
 	float speed;
 	float orientation;
 	float max_force;
 	float max_velocity;
-	float slowingRadius;
 
 	SDL_Texture *sprite_texture;
 	bool draw_sprite;
@@ -60,6 +62,7 @@ private:
 	int sprite_h;
 
 public:
+
 	Agent();
 	~Agent();
 	Vector2D getPosition();
@@ -68,7 +71,10 @@ public:
 	float getMaxVelocity();
 	float getMaxForce();
 	float getMass();
-	float getSlowingRadius();
+	std::vector<Agent*> getNeighbour_flock();
+	std::vector<Wall*> getNeighbour_walls();
+	void setFlock(Agent* agent);
+	void setWalls(Wall *wall);
 	void setBehavior(SteeringBehavior *behavior);
 	void setPosition(Vector2D position);
 	void setTarget(Vector2D target);
@@ -76,5 +82,10 @@ public:
 	void update(float dtime, SDL_Event *event);
 	void draw();
 	bool Agent::loadSpriteTexture(char* filename, int num_frames=1);
-	
+
+private:
+	void setNeighbourFlock(const float neghbour_radius);
+	void setNeighbourWall(const float cone_radius, const float cone_length);
+	void cleanNeighbourFlock();
+	void cleanNeighbourWalls();
 };
